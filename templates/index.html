@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Tagger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>POS Tagger</h1>
+        <form action="/" method="POST">
+            <div class="input-field">
+                <input type="text" name="sentence" id="sentence">
+                <label for="sentence">Enter a sentence</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Tag</button>
+        </form>
+        {% if tags %}
+        <h3>POS Tags:</h3>
+        <ul>
+            {% for tag in tags %}
+            <li>{{ tag[0] }}: {{ tag[1] }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
